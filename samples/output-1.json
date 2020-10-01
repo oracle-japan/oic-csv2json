@@ -1,0 +1,33 @@
+{ 
+  "freeWifiSpots": [
+    {
+      "cityCode": "131113",
+      "no": "1",
+      "name": "大田区役所",
+      "kana": "オオタクヤクショ",
+      "address": "東京都大田区蒲田5-13-14",
+      "ssid": "Ota_City_Free_Wi-Fi",
+      "area": "本庁舎１階・２階",
+      "url": "http://www.city.ota.tokyo.jp/kanko/topics/open_otacity-free-wifi.html",
+      "lastUpdated": "2018-12-20"
+    }, {
+      "cityCode": "131113",
+      "no": "2",
+      "name": "大田区産業プラザ観光・産業情報コーナー",
+      "kana": "オオタクサンギョウプラザカンコウサンギョウジョウホウコーナー",
+      "address": "東京都大田区南蒲田1-20-20",
+      "ssid": "Ota_City_Free_Wi-Fi",
+      "url": "http://www.city.ota.tokyo.jp/kanko/topics/open_otacity-free-wifi.html",
+      "lastUpdated": "2018-12-20"
+    }, {
+      "cityCode": "131113",
+      "no": "3",
+      "name": "新井宿特別出張所内観光情報コーナー",
+      "kana": "アライジュクトクベツシュッチョウジョナイカンコウジョウホウコーナー",
+      "address": "東京都大田区中央1-21-6",
+      "ssid": "Ota_City_Free_Wi-Fi",
+      "url": "http://www.city.ota.tokyo.jp/kanko/topics/open_otacity-free-wifi.html",
+      "lastUpdated": "2018-12-20"
+    }
+  ]
+}
