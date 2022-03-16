@@ -21,7 +21,8 @@ Oracle Integration Cloud のインスタンスをまだ作成していない場�
 また、このチュートリアルは Oracle Integration Cloud が提供している SFTP ファイル・サーバーを使用します。
 Oracle Integration Cloud のファイル・サーバーは、次のページの手順にしたがって有効化する必要があります。
 
-> **[Oracle Integration Cloud チュートリアル - ファイル・サーバーの有効化](https://github.com/oracle-japan/oic-fileserver/blob/master/README.md)**  
+> **[Oracle Integration Cloud チュートリアル - ファイル・サーバーの有効化](https://github.com/oracle-japan/oic-fileserver/blob/master/README.md)**
+>
 > このチュートリアルは、Oracle Integration Cloud が提供する SFTP に対応したファイル・サーバーを有効化する手順について説明します。
 
 ## 接続の作成
