@@ -1,19 +1,24 @@
 # Oracle Integration Cloud チュートリアル - CSV ファイルから JSON ファイルへの変換
 
-2020年10月
+2022年3月
 
-このチュートリアルは、Oracle Integration Cloud の FTP アダプタを使用して、ファイル・サーバーにアップロードされた CSV ファイルを読み取り、JSON ファイルに変換して、再びファイル・サーバーにアップロードする手順を説明します。
+このチュートリアルは、Oracle Integration Cloud (OIC) の FTP アダプタを使用して、ファイル・サーバーにアップロードされた CSV ファイルを読み取り、JSON ファイルに変換して、再びファイル・サーバーにアップロードする手順を説明します。
 
 ## 前提
 
 このチュートリアルでは、Oracle Integration Cloud のインスタンスが作成されており、サービス・コンソールにログインできることを前提としています。
 Oracle Integration Cloud のインスタンスをまだ作成していない場合は、次のページを参考に作成してください。
 
-> **[Oracle Integration Cloud インスタンスの作成](https://community.oracle.com/docs/DOC-1037470)**  
-> Oracle Integration(OIC) を使い始めるための準備作業として、OIC インスタンスの作成が必要になります。
-> この文書は OIC インスタンスの作成方法を ステップ・バイ・ステップで紹介するチュートリアルです
+> **[OIC インスタンスを作成する](https://oracle-japan.github.io/ocitutorials/integration/integration-for-commons-1-instance)**
+>
+> OCI コンソールを利用して、OIC インスタンスを作成する手順について説明します。
+>
+> **[OIC インスタンスにユーザーを追加する](https://oracle-japan.github.io/ocitutorials/integration/integration-for-commons-2-addusr)**
+>
+> OIC を利用するユーザーを追加する手順について説明します。
+> ここでは、Oracle Identity Cloud Service (IDCS) の管理コンソールから、ユーザーを追加する手順とその準備について説明します。
 
-また、Oracle Integration Cloud が提供している SFTP ファイル・サーバーを使用します。
+また、このチュートリアルは Oracle Integration Cloud が提供している SFTP ファイル・サーバーを使用します。
 Oracle Integration Cloud のファイル・サーバーは、次のページの手順にしたがって有効化する必要があります。
 
 > **[Oracle Integration Cloud チュートリアル - ファイル・サーバーの有効化](https://github.com/oracle-japan/oic-fileserver/blob/master/README.md)**  
@@ -93,8 +98,8 @@ Oracle Integration Cloud 組み込みの SFTP サーバーの IP アドレスと
 
     | 入力項目 | 入力する値 |
     |:----|:----|
-    | **「名前」** | `OIC SFTP Server` |
-    | **「識別子」** | `OIC_SFTP_SERVER` （「名前」を入力すると自動的に設定されます） |
+    | **「名前」** | `OIC File Server <ユーザーのイニシャル>` |
+    | **「識別子」** | `OIC_FILE_SERVER_<ユーザーのイニシャル>` （「名前」を入力すると自動的に設定されます） |
     | **「バージョン」** | `01.00.0000` （初期値をそのまま使用） |
 
     ![OIC サービス・コンソール](images/ss014.png)
@@ -142,8 +147,8 @@ Oracle Integration Cloud 組み込みの SFTP サーバーの IP アドレスと
 Oracle Integration Cloud の ***"統合"*** は、アプリケーションやサービスの間の連携のステップを定義したものです。
 このチュートリアルで作成する統合は、次の処理を実行します。
 
-1. Oracle Integration Cloud のファイル・サーバーから CSV ファイルを取得し読み取る
-1. 読み取ったファイルを、事前定義された形式の JSON ファイルに変換
+1. Oracle Integration Cloud のファイル・サーバーから CSV ファイルを取得し、データを読み取る
+1. 読み取ったデータを、事前定義された形式の JSON ファイルに変換
 1. 変換された JSON ファイルを Oracle Integration Cloud のファイル・サーバーに書き出す
 
 これを実装する統合は、次の手順で作成します。
@@ -176,10 +181,9 @@ Oracle Integration Cloud の ***"統合"*** は、アプリケーションやサ
 
     | 入力項目 | 入力する値 |
     |:----|:----|
-    | **「統合にどのような名前をつけますか。」** | `CSV to JSON` |
-    | **「識別子」** | `CSV_TO_JSON` (`CSV to JSON` と名前をつけると自動的に設定される) |
+    | **「統合にどのような名前をつけますか。」** | `CSV to JSON <ユーザーのイニシャル>` |
+    | **「識別子」** | `CSV_TO_JSON_ <ユーザーのイニシャル>` (`CSV to JSON` と名前をつけると自動的に設定される) |
     | **「バージョン」** | `01.00.0000` （初期状態で入力されている値をそのまま使用） |
-    | **「この統合はどのパッケージに属しますか。」** | `oic-csv2json` |
 
     ![OIC サービス・コンソール](images/ss026.png)
 
@@ -428,7 +432,7 @@ Oracle Integration Cloud では、作成した統合の実行状況をトラッ�
     cd csv2json
     mkdir input
     cd input
-    put <パス>/input-1.csv ./input.csv
+    put <パス>/input-1.csv input.csv
     ```
 
 1.  Oracle Integration Cloud で作成した統合を実行するには、アクティブ化します。
